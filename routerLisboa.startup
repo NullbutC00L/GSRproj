@@ -1,0 +1,18 @@
+#link sede
+ip addr add dev eth0 10.0.0.210/30
+ip link set dev eth0 up
+
+#link Coimbra
+ip addr add dev eth1 10.0.0.217/30
+ip link set dev eth1 up
+
+#link local
+ip addr add dev eth2 192.168.0.9/29
+ip link set dev eth2 up
+
+#link Visitantes
+ip addr add dev eth3 10.0.0.161/28
+ip link set dev eth3 up
+
+/etc/init.d/dhcp3-server start
+/etc/init.d/zebra start

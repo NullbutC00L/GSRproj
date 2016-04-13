@@ -1,0 +1,35 @@
+#link DNS
+ip addr add dev eth0 10.0.0.129/29
+ip link set dev eth0 up
+
+#link monitor
+ip addr add dev eth1 192.168.0.1/29
+ip link set dev eth1 up
+
+#link Admin
+ip addr add dev eth2 10.0.0.137/29
+ip link set dev eth2 up
+
+#link Visitantes
+ip addr add dev eth3 10.0.0.145/28
+ip link set dev eth3 up
+
+#link routerInternet
+ip addr add dev eth4 192.168.1.1/24
+ip link set dev eth4 up
+
+#link servidor Servicos
+ip addr add dev eth5 10.0.0.2/30
+ip link set dev eth5 up
+
+#link Porto
+ip addr add dev eth6 10.0.0.214/30
+ip link set dev eth6 up
+
+#linkLisboa
+ip addr add dev eth7 10.0.0.209/30
+ip link set dev eth7 up
+
+
+/etc/init.d/dhcp3-server start
+/etc/init.d/zebra start
